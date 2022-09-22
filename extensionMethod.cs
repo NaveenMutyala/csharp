@@ -25,6 +25,15 @@ namespace ExtensionMethods
         {
             Console.WriteLine("this is extension method");
         }
+        
+        public static int fact(this Int32 i)
+        {
+            if (i<=1)
+            return 1;
+            else
+            return i*(i-1);
+            
+        }
     }
     
 
@@ -41,15 +50,16 @@ namespace ExtensionMethods
             child c = new child();
             c.test3();
             
+            int i =10;
+            Console.WriteLine(i.fact());
+            
         }
     }
 }
 
-
-/*output:
-
-Test1 Method
-Test2 Method
+/*
+Test1 MethodTest2 Method
 this is extension method
 this is extension method
+90
 */
