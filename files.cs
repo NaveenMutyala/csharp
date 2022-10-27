@@ -19,12 +19,26 @@ namespace Files
             e.GetBytes(dat, 0, dat.Length, bd, 0, true);
             fs.Seek(0, SeekOrigin.Begin);
             fs.Write(bd, 0, bd.Length);
+            fs.Close();
+           // Console.WriteLine("Hello There");
+           //Reading 
+            byte[] bd1 = new byte[200];
+            char[] dat1 = new char[200];
+            FileStream fs1 = new FileStream("C:/Users/exam2/Downloads/data.txt", FileMode.Open);
+            fs1.Seek(0, SeekOrigin.Begin);
+            fs1.Read(bd1, 0, 200);
+            Decoder d = Encoding.UTF8.GetDecoder();
+            d.GetChars(bd1, 0, bd1.Length, dat1, 0);
+            Console.WriteLine(dat1);
+
+
             Console.ReadKey();
 
             
         }
     }
 }
+
 
 using System;
 using System.Collections.Generic;
