@@ -37,3 +37,19 @@ namespace ConsoleApplication3
         }
     }
 }
+
+
+// output
+/*
+
+Department Name - Support
+Department Name - Account
+Department Name - Sales
+Department Name - Pre-Sales
+Department Name - Marketing
+Department Name - Finance
+
+Press any key to continue.
+
+
+*/
