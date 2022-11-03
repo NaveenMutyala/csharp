@@ -31,6 +31,18 @@ namespace ConsoleApplication3
             Console.WriteLine("Department Name - " + item.Value);
          }
 
+         Console.WriteLine("Removing the element");
+
+         //Remove Sales Department
+         xdoc.Descendants().Where(s => s.Value == "Sales").Remove();
+
+         var result2 = xdoc.Element("Departments").Descendants();
+
+         foreach (XElement item in result)
+         {
+             Console.WriteLine("Department Name - " + item.Value);
+         }
+
          Console.WriteLine("\nPress any key to continue.");
          Console.ReadKey();
       
@@ -39,12 +51,18 @@ namespace ConsoleApplication3
 }
 
 
-// output
+
 /*
 
 Department Name - Support
 Department Name - Account
 Department Name - Sales
+Department Name - Pre-Sales
+Department Name - Marketing
+Department Name - Finance
+Removing the element
+Department Name - Support
+Department Name - Account
 Department Name - Pre-Sales
 Department Name - Marketing
 Department Name - Finance
